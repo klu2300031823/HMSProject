@@ -1,0 +1,172 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+
+{% load static %}
+
+{% block body %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .doctor-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .doctor-details {
+            flex: 1;
+        }
+
+        .doctor-details h3 {
+            font-size: 20px;
+            margin: 0;
+            color: #333;
+        }
+
+        .doctor-details p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .experience {
+            font-size: 14px;
+            color: #4CAF50;
+        }
+
+        .availability {
+            color: #FF5722;
+            font-weight: bold;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .actions button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .actions button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Doctor 1 -->
+        <div class="doctor-card">
+            <div class="doctor-details">
+                <h3>Dr.Charan</h3>
+                <p>Specialization: Cardiologist</p>
+                <p>Registration No: 0001</p>
+                <p>Languages: English, Spanish</p>
+                <p><span class="experience">15 years experience overall</span></p>
+                <p>Location:Pune</p>
+                <p class="availability">MON - SAT | 10:00 AM - 4:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div class="doctor-card">
+            <div class="doctor-details">
+                <h3>Dr.Prem</h3>
+                <p>Specialization: Dermatologist</p>
+                <p>Registration No: 0002</p>
+                <p>Languages: English, French</p>
+                <p><span class="experience">12 years experience overall</span></p>
+                <p>Location:Delhi</p>
+                <p class="availability">MON - FRI | 11:00 AM - 6:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div class="doctor-card">
+            <div class="doctor-details">
+                <h3>Dr.Ganesh</h3>
+                <p>Specialization: Pediatrician</p>
+                <p>Registration No: 0003</p>
+                <p>Languages: English, Korean</p>
+                <p><span class="experience">10 years experience overall</span></p>
+                <p>Location:Vijayawada</p>
+                <p class="availability">TUE - SAT | 9:00 AM - 1:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Doctor 4 -->
+        <div class="doctor-card">
+            <div class="doctor-details">
+                <h3>Dr.Preneeth</h3>
+                <p>Specialization: Neurologist</p>
+                <p>Registration No: 0004</p>
+                <p>Languages: English, Mandarin</p>
+                <p><span class="experience">20 years experience overall</span></p>
+                <p>Location:Guntur</p>
+                <p class="availability">MON - THU | 1:00 PM - 5:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Doctor 5 -->
+        <div class="doctor-card">
+            <div class="doctor-details">
+                <h3>Dr.Balaji</h3>
+                <p>Specialization: Orthopedic</p>
+                <p>Registration No: 0005</p>
+                <p>Languages: English, German</p>
+                <p><span class="experience">18 years experience overall</span></p>
+                <p>Location:Hyderabad</p>
+                <p class="availability">MON - SAT | 8:00 AM - 3:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Doctor 6 -->
+        <div class="doctor-card">
+            <div class="doctor-details">
+                <h3>Dr.Jayanth</h3>
+                <p>Specialization: Gastroenterologist</p>
+                <p>Registration No: 0006</p>
+                <p>Languages: English, Japanese</p>
+                <p><span class="experience">22 years experience overall</span></p>
+                <p>Location:Vizag</p>
+                <p class="availability">MON - FRI | 2:00 PM - 6:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Single Book Appointment Button -->
+        <div class="actions">
+            <a href="{% url 'book_appointment' %}">
+        <button type="button">Book Appointment</button>
+    </a>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

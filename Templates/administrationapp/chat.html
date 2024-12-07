@@ -1,0 +1,105 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+
+{% block body %}
+<div class="chat-container">
+    <div class="chat-header">
+        <h3>Health Chatbot</h3>
+    </div>
+    <div id="chat-box">
+        <div id="chat-messages">
+            <!-- Displaying previous chat -->
+            {% if user_input and bot_response %}
+            <div class="chat-message user-message">
+                <p><b>You:</b> {{ user_input }}</p>
+            </div>
+            <div class="chat-message bot-message">
+                <p><b>Bot:</b> {{ bot_response }}</p>
+            </div>
+            {% endif %}
+        </div>
+        <form method="POST" class="chat-form">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" class="form-control" name="user_input" placeholder="Type your message here..." required>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    /* Chat container styling */
+    .chat-container {
+        width: 60%;
+        margin: 50px auto;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    /* Chat header styling */
+    .chat-header {
+        background-color: #007bff;
+        color: white;
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* Chat box styling */
+    #chat-box {
+        padding: 15px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    /* Chat messages styling */
+    .chat-message {
+        margin-bottom: 15px;
+    }
+
+    .chat-message p {
+        margin: 0;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .user-message p {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        text-align: left;
+    }
+
+    .bot-message p {
+        background-color: #f8d7da;
+        color: #721c24;
+        text-align: left;
+    }
+
+    /* Chat form styling */
+    .chat-form {
+        margin-top: 15px;
+    }
+
+    .input-group {
+        display: flex;
+    }
+
+    .input-group .form-control {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .input-group .btn {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+</style>
+
+<script>
+    // Smooth scrolling to the bottom of the chat box after new messages
+    const chatBox = document.getElementById('chat-box');
+    chatBox.scrollTop = chatBox.scrollHeight;
+</script>
+{% endblock %}
